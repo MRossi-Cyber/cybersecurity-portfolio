@@ -1,5 +1,3 @@
-markdown
-
 ## MITRE ATT&CK Mapping – Project 08
 
 - **T1021.006** – Remote Services: Windows Remote Management

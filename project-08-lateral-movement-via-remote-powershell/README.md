@@ -37,7 +37,7 @@ This project focuses on **enterprise-style attacks** and **SOC / Blue Team detec
 
 ### Step 1 – WinRM Verification (Windows B)
 
-##powershell
+Powershell:
 
 Get-Service WinRM
 
@@ -51,7 +51,7 @@ The user is added to the Remote Management Users local group, which allows Power
 
 net localgroup "Usuarios de administración remota" Atacante /add
 
-# Verification:
+### Verification:
 
 net localgroup "Usuarios de administración remota"
 
@@ -83,14 +83,14 @@ hostname
 
 Get-Process | Select-Object -First 5
 
-# Exit session:
+### Exit session:
 
 Exit-PSSession
 
 
-### Detection and Evidence
+## Detection and Evidence
 
-## Security Logs
+### Security Logs
 
 4624 – Successful Logon
 
@@ -109,12 +109,12 @@ Disable-LocalUser -Name Atacante
 
 Stop-Service WinRM
 
-## Optional hardening:
+### Optional hardening:
 
 Set-Item WSMan:\localhost\Client\TrustedHosts -Value ""
 
 
-### Outcome
+## Outcome
 
 Lateral movement successfully simulated
 
@@ -125,7 +125,7 @@ Effective containment and erradication
 Realistic enterprise attack scenario demonstrated
 
 
-### Conclusion
+## Conclusion
 
 This project demonstrates how attackers move inside the network after initial compromise, and how defenders can detect and respond to such activity using native Windows telemetry.
 
